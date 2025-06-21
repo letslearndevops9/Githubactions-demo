@@ -12,12 +12,24 @@ jobs:
       -  name: install cowsay package
          run: sudo apt-get install cowsay -y 
 
+      -  name: sleep for 30 sec
+         run: sleep 30s
+
+   Build_job1:  
+      runs-on: ubuntu-latest
+      steps:
       -  name: Excecute cowsay program
          run: cowsay -f dragon "Run for cover,  I am a dragon........" >> dragon.txt
 
-      -  name: Test file exits
-         run: grep -i "dragon" dragon.txt
+      -  name: sleep for 30s
+         run: sleep 30s
+ 
+   output_job1:
+       runs-on: ubuntu-latest
+       steps:
+       -  name: Test file exits
+          run: grep -i "dragon" dragon.txt
 
-      -  name: Read the files
-         run: cat dragon.txt
+       -  name: Read the files
+          run: cat dragon.txt
    
