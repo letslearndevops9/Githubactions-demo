@@ -11,7 +11,7 @@ jobs:
          run: |
               echo "my first task"
               ls -ltra
-              cat ReADME.md
+              cat README.md
 
       #-  name: List the files
       #   run: ls
