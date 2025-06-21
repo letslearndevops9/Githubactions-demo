@@ -11,16 +11,16 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Docker login
-        env:
+       - name: Set up Docker Build
+         run: echo docker build -t ${{env.REGISTRY}}/$DOCKER_USERNAME/$IMAGE_NAME:latest
+        
+       - name: Docker login
+         env:
            DOCKER_PASSWORD: Aj@yV#nu7503!
-        run: echo docker loggin --username=$DOCKER_USERNMAE --password=$DOCKER_PASSSSWORD
-
-      - name: Set up Docker Build
-        run: echo docker build -t ${{env.REGISTRY}}/$DOCKER_USERNAME/$IMAGE_NAME:latest
-
-      - name: Push Docker Image to Registry
-        run: |
+         run: echo docker loggin --username=$DOCKER_USERNMAE --password=$DOCKER_PASSSSWORD
+     
+       - name: Push Docker Image to Registry
+         run: |
           docker push $REGISTRY/$DOCKER_USERNAME/$IMAGE_NAME:latest
   deploy:
     needs:  [build]
