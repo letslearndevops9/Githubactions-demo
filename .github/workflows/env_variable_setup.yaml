@@ -4,7 +4,7 @@ on: push
 
 env:
   CONTAINER_REGISTRY: docker.io                      
-  DOCKER_USERNAME: letslearndevops9
+  #DOCKER_USERNAME: letslearndevops9
   IMAGE_NAME: github-actions123-nginx     
 
 jobs:
@@ -15,9 +15,8 @@ jobs:
          run: echo docker build -t ${{ env.CONTAINER_REGISTRY}}/$DOCKER_USERNAME/$IMAGE_NAME:latest 
         
        - name: Docker login
-         env:
-           DOCKER_PASSWORD: Aj@yV#nu7503!
-         run: echo docker login --username=$DOCKER_USERNMAE --password=$DOCKER_PASSWORD
+           #DOCKER_PASSWORD: Aj@yV#nu7503!
+         run: echo docker login --username=$DOCKER_USERNMAE --password=${{ secrets.DOCKER_PASSWORD}}
      
        - name: Push Docker Image to Registry
          run: echo docker push $CONTAINER_REGISTRY/$DOCKER_USERNAME/$IMAGE_NAME:latest
