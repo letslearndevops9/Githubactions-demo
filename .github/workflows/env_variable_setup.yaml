@@ -1,0 +1,32 @@
+name: Build and Deploy Docker Image
+
+on: push
+
+env:
+  REGISTRY: docker.io                      # Change this if using ghcr.io, etc.
+  DOCKER_USERNAME: letslearndevops9
+  IMAGE_NAME: github-action-nginx     # Replace with your image path
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Docker login
+        env:
+           DOCKER_PASSWORD: Aj@yV#nu7503!
+        run: echo docker loggin --username=$DOCKER_USERNMAE --password=$DOCKER_PASSSSWORD
+
+      - name: Set up Docker Build
+        run: echo docker build -t ${{env.REGISTRY}}/$DOCKER_USERNAME/$IMAGE_NAME:latest
+
+      - name: Push Docker Image to Registry
+        run: |
+          docker push $REGISTRY/$DOCKER_USERNAME/$IMAGE_NAME:$latest
+  deploy:
+    needs:  [build]
+    runs-on: ubuntu-latest
+    steps:
+      # Optional deploy step using docker
+      - name: Deploy Docker Container (Optional)
+        run: |
+          docker run -d --rm -p 80:80 $REGISTRY/$DOCKER_USERNAME/$IMAGE_NAME:latest
