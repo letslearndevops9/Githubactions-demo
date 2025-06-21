@@ -1,7 +1,7 @@
 name: Build and Deploy Docker Image
 
 on: 
-schedular: 
+Schedule: 
   - cron "*/1 * * * *"
 #push
 
