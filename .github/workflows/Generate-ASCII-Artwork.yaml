@@ -1,0 +1,23 @@
+name: Generate Ascii artwork 
+
+on: push 
+
+jobs:
+   Ascii_artwork:
+      runs-on: ubuntu-latest
+      steps:
+      -  name: checkout repo
+         uses: actions/checkout@v4
+
+      -  name: install cowsay package
+         run: sudo apt install cowsay -y 
+
+      -  name: Excecute cowsay program
+         run: cowsay -f horse "run for cover,  I am a HORSE........" >> horse.txt
+
+      -  name: Test file exits
+         run: grep -i "horse" horse.txt
+
+      -  name: Read the files
+         run: cat horse.txt
+   
