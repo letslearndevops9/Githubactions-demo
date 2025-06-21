@@ -10,14 +10,14 @@ jobs:
          uses: actions/checkout@v4
 
       -  name: install cowsay package
-         run: sudo apt install cowsay -y 
+         run: sudo apt-get install cowsay -y 
 
       -  name: Excecute cowsay program
-         run: cowsay -f horse "run for cover,  I am a HORSE........" >> horse.txt
+         run: cowsay -f dragon "Run for cover,  I am a DRAGON........" >> dragon.txt
 
       -  name: Test file exits
-         run: grep -i "horse" horse.txt
+         run: grep -i "dragon" dragon.txt
 
       -  name: Read the files
-         run: cat horse.txt
+         run: cat dragon.txt
    
