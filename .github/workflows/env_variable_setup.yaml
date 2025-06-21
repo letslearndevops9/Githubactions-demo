@@ -5,7 +5,7 @@ on: push
 env:
   REGISTRY: docker.io                      # Change this if using ghcr.io, etc.
   DOCKER_USERNAME: letslearndevops9
-  IMAGE_NAME: github-action-nginx     # Replace with your image path
+  IMAGE_NAME: github-action123-nginx     # Replace with your image path
 
 jobs:
   build:
@@ -17,7 +17,7 @@ jobs:
        - name: Docker login
          env:
            DOCKER_PASSWORD: Aj@yV#nu7503!
-         run: echo docker login --username=$DOCKER_USERNMAE --password=$DOCKER_PASSSSWORD
+         run: echo docker login --username=$DOCKER_USERNMAE --password=$DOCKER_PASSWORD
      
        - name: Push Docker Image to Registry
          run: |
