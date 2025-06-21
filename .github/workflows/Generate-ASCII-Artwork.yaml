@@ -13,11 +13,11 @@ jobs:
          run: sudo apt-get install cowsay -y 
 
       -  name: Excecute cowsay program
-         run: cowsay -f dragon "Run for cover,  I am a DRAGON........" >> dragon.txt
+         run: cowsay -f spider "Run for cover,  I am a spider........" >> spider.txt
 
       -  name: Test file exits
-         run: grep -i "dragon" dragon.txt
+         run: grep -i "spider" spider.txt
 
       -  name: Read the files
-         run: cat dragon.txt
+         run: cat spider.txt
    
