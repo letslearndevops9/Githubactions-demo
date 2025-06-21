@@ -7,11 +7,14 @@ jobs:
       -  name: checkout repo
          uses: actions/checkout@v4
 
-      -  name: My first task
-         run: echo "my first task"
+      -  name: Listing the files and Read 
+         run: |
+              echo "my first task"
+              ls -ltra
+              cat ReADME.md
 
-      -  name: List the files
-         run: ls
+      #-  name: List the files
+      #   run: ls
 
-      -  name: Read file
-         run: cat README.md
+      #-  name: Read file
+      #   run: cat README.md
