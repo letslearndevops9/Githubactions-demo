@@ -20,13 +20,12 @@ jobs:
          run: echo docker login --username=$DOCKER_USERNMAE --password=$DOCKER_PASSWORD
      
        - name: Push Docker Image to Registry
-         run: |
-          docker push $REGISTRY/$DOCKER_USERNAME/$IMAGE_NAME:latest
+         run: echo docker push $REGISTRY/$DOCKER_USERNAME/$IMAGE_NAME:latest
   deploy:
     needs:  [build]
     runs-on: ubuntu-latest
     steps:
       # Optional deploy step using docker
-      - name: Deploy Docker Container (Optional)
+      - name: Deploy Docker Container
         run: |
           docker run -d --rm -p 80:80 $REGISTRY/$DOCKER_USERNAME/$IMAGE_NAME:latest
