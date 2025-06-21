@@ -1,0 +1,8 @@
+name: my AWesome web
+on: push
+jobs:
+  unit-testing:
+    run-on: ubuntu-latest
+    steps:
+      name: My first task
+      run: echo "my first task"
