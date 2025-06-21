@@ -3,7 +3,7 @@ name: Generate Ascii artwork
 on: push 
 
 jobs:
-   Ascii_artwork:
+   Ascii_artwork_1:
       runs-on: ubuntu-latest
       steps:
       -  name: checkout repo
@@ -15,16 +15,16 @@ jobs:
       -  name: sleep for 30 sec
          run: sleep 30s
 
-   Build_job1:  
+   Build_job1_2:  
       runs-on: ubuntu-latest
       steps:
       -  name: Excecute cowsay program
          run: cowsay -f dragon "Run for cover,  I am a dragon........" >> dragon.txt
 
-      -  name: sleep for 30s
-         run: sleep 30s
+      -  name: sleep for 10s
+         run: sleep 10s
  
-   output_job1:
+   output_job1_3:
        runs-on: ubuntu-latest
        steps:
        -  name: Test file exits
