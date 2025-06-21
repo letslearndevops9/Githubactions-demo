@@ -1,6 +1,7 @@
 name: Build and Deploy Docker Image
 
-on: push
+on: schedular: "*/1 * * * *"
+#push
 
 env:
   CONTAINER_REGISTRY: docker.io                      
