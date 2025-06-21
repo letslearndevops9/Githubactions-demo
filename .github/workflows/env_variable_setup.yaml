@@ -3,7 +3,7 @@ name: Build and Deploy Docker Image
 on: 
   schedule:
     - cron: '*/1 * * * *'
-  workflow_dispatch:
+  #workflow_dispatch:
 #push
 
 env:
