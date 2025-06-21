@@ -17,7 +17,7 @@ jobs:
        - name: Docker login
          env:
            DOCKER_PASSWORD: Aj@yV#nu7503!
-         run: echo docker loggin --username=$DOCKER_USERNMAE --password=$DOCKER_PASSSSWORD
+         run: echo docker login --username=$DOCKER_USERNMAE --password=$DOCKER_PASSSSWORD
      
        - name: Push Docker Image to Registry
          run: |
