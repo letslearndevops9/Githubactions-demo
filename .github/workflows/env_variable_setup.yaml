@@ -9,7 +9,7 @@ env:
   REGISTRY: docker.io
   DOCKER_USERNAME: letslearndevops9
   DOCKER_PASSWORD: Aj@yV#nu7503!
-  IMAGE_NAME: github-action123-nginx
+  IMAGE_NAME: github-action-nginx
   TAG: latest
 
 jobs:
