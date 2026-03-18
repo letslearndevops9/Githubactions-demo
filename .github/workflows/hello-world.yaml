@@ -1,0 +1,10 @@
+name: Hello World 
+
+on: 
+ workflow_dispatch:
+
+ jobs:
+   say-hello-inline-bash:
+     run-on: ubuntu-24.04
+     steps: 
+        - run: echo "Hello from an inline bash script in zgithub Action workflow!"
