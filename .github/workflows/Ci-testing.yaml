@@ -10,7 +10,7 @@ jobs:
       -  name: Listing the files and Read 
          run: |
               echo "my first task"
-              ls -ltra
+              echo " Hello world this is simple github actions workflow!"
               cat README.md
 
       #-  name: List the files
